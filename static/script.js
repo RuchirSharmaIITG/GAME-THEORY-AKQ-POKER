@@ -9,12 +9,10 @@ async function tossCoin(choice) {
     });
     const data = await res.json();
 
-    // UI Updates for Coin Toss
     const resultText = document.getElementById('coin-result');
     resultText.innerHTML = `Coin landed on <b>${data.toss_result}</b>. <br> 
                             You are ${data.user_won_toss ? "<b>Player 1 (Act First)</b>" : "<b>Player 2 (Act Second)</b>"}`;
     
-    // Transition to Game
     setTimeout(() => {
         document.getElementById('coin-section').classList.add('hidden');
         document.getElementById('game-section').classList.remove('hidden');
@@ -30,7 +28,7 @@ function setupGameUI(data) {
     // If User is Player 1, they act immediately.
     // If User is Player 2, we need to ask server for Computer's first move.
     
-    processGameStep(null); // Initialize game loop
+    processGameStep(null); 
 }
 
 async function processGameStep(userAction) {
@@ -45,16 +43,13 @@ async function processGameStep(userAction) {
     });
     const data = await res.json();
 
-    // Update Pot
     if(data.pot) document.getElementById('pot-amount').innerText = data.pot;
 
-    // Check for Game Over
     if (data.game_over) {
         endGame(data);
         return;
     }
 
-    // Show Computer Move if happened
     if (data.comp_move) {
         const compBubble = document.getElementById('comp-action');
         compBubble.innerText = `Computer chooses: ${data.comp_move}`;
@@ -63,7 +58,6 @@ async function processGameStep(userAction) {
         compBubble.style.animation = "popIn 0.3s";
     }
 
-    // Update Message and Buttons for User
     if (data.message) {
         document.getElementById('game-message').innerText = data.message;
         
@@ -81,13 +75,11 @@ async function processGameStep(userAction) {
 }
 
 function endGame(data) {
-    // Reveal Computer Card
     const compCardVis = document.getElementById('comp-card-vis');
     compCardVis.classList.remove('back');
     compCardVis.classList.add('front');
     compCardVis.innerHTML = `<span class="card-text">${data.comp_card}</span>`;
 
-    // Show Overlay after brief delay
     setTimeout(() => {
         const overlay = document.getElementById('result-overlay');
         overlay.classList.remove('hidden');
@@ -96,7 +88,6 @@ function endGame(data) {
         document.getElementById('reason-text').innerText = data.reason;
         document.getElementById('money-text').innerText = data.money_msg;
         
-        // Dynamic color
         document.querySelector('.result-box').style.borderTop = 
             `10px solid ${data.winner === "User" ? "#2ecc71" : "#e74c3c"}`;
     }, 1000);
