@@ -12,7 +12,7 @@ This project simulates a "Heads-Up" match between a human player and an algorith
 
 ## 📸 Live Demo & Screenshots
 
-<h2>[Link to Live Site: https://game-theory-akq-poker.onrender.com/]</h2>
+<h2>[Link to Live Site: https://game-theory-akq-poker.onrender.com/](May take 1-2 minutes to open up)</h2>
 
 <img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/adfc279c-51e4-46b5-8c12-036f69c7ba72" />
 <h3><p align="center"><b>After choosing Heads(H)</b></p></h3>
