@@ -102,12 +102,6 @@ If you want to run this simulation on your own machine:
 
 ---
 
-## 👥 Credits & Reference
+## 📬 Contact
 
-**Project Team:**
-* Shreyansh Kumar
-* Ruchir Sharma
-* Shourya Agarwal
-
-**Based on:**
-* *Game Theory - AKQ Poker (Technical Analysis, 2025)*
+- 🔗 [LinkedIn Profile](https://www.linkedin.com/in/ruchir-sharma-243a10337/)
