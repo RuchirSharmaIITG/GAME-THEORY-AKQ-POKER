@@ -77,6 +77,21 @@ The project is built using a simple client-server architecture:
 
 ---
 
+## 📂 Project Structure
+```text
+akq-poker-project/
+├── static/
+│   ├── script.js           # Frontend logic (game loop, animations)
+│   └── style.css           # Styling (card animations, casino theme)
+├── templates/
+│   └── index.html          # Main HTML game interface
+├── app.py                  # Flask backend (Game logic & AI)
+├── README.md               # Project documentation
+├── REPORT AND ANALYSIS.pdf # Technical report on Game Theory logic
+└── requirements.txt        # List of Python dependencies
+```
+---
+
 ## ⚙️ Installation & Run Locally
 
 If you want to run this simulation on your own machine:
